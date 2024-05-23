@@ -1,21 +1,18 @@
 // we need a program that takes rock, paper or scissors as input and weighs it against a randomly generated output from those three.
 // if the output is the same as the input, that round is a draw. otherwise, the player or the computer gets a point depending on whose input beats that of the other.
 
-let computerScore = 0;
-let userScore = 0;
-
 
 let getComputerChoice = function() {
+    let choice;
     if (Math.random() <= 0.33) {
-        return "rock";
+        choice = "rock";
     } else if (0.33 < Math.random() <= 0.66) {
-        return "paper";
+        choice = "paper";
     } else {
-        return "scissors";
+        choice = "scissors";
     }
+    return choice;
 };
-
-let computerChoice = getComputerChoice();
 
 let getUserChoice = function() {
     let choice = prompt(`what will you choose? \n (rock/paper/scissors)`).toLowerCase();   
@@ -26,7 +23,8 @@ let getUserChoice = function() {
     }
 };
 
-let userChoice = getUserChoice();
+let computerScore = 0;
+let userScore = 0;
 
 let playRound = function(hChoice, cChoice) {
     if (hChoice === cChoice) {
@@ -41,3 +39,13 @@ let playRound = function(hChoice, cChoice) {
         console.log("you didn't input a value... try again!");
     }
 };
+
+let executeRound = function() {
+    let computerChoice = getComputerChoice();
+    console.log(`computer chose: ${computerChoice}`);
+    let userChoice = getUserChoice();
+    console.log(`you chose: ${userChoice}`);
+    playRound(userChoice, computerChoice);
+}
+
+executeRound();
