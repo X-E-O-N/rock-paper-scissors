@@ -1,3 +1,3 @@
 # rock-paper-scissors
 a project for TOP. 
-its functionality lies exclusive to the console for now.
+its functionality lies exclusively within the console for now.
