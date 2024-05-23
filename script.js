@@ -28,3 +28,16 @@ let getUserChoice = function() {
 
 let userChoice = getUserChoice();
 
+let playRound = function(hChoice, cChoice) {
+    if (hChoice === cChoice) {
+        console.log("it's a draw! nobody wins a point :((");
+    } else if ((hChoice === "rock" && cChoice === "paper") || (hChoice === "paper" && cChoice === "scissors") || (hChoice === "scissors" && cChoice === "rock")) {
+        computerScore++;
+        console.log("computer wins! better luck next time ;(((");
+    } else if ((hChoice === "rock" && cChoice === "scissors") || (hChoice === "paper" && cChoice === "rock") || (hChoice === "scissors" && cChoice === "paper")) {
+        userScore++;
+        console.log("you win!!! keep it up :DDDD");
+    } else {
+        console.log("you didn't input a value... try again!");
+    }
+};
